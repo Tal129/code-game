@@ -1,0 +1,28 @@
+ <!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>تسجيل الدخول</title>
+</head>
+<body style="text-align: center;">
+
+ <h1> Code Game</h1>
+
+  <h2>أدخل اسمك للبدء</h2>
+
+  <input type="text" id="username" placeholder="اسم المستخدم">
+
+  <br><br>
+
+  <button onclick="saveName()">ابدأ</button>
+
+  <script>
+    function saveName() {
+      let name = document.getElementById("username").value;
+      localStorage.setItem("playerName", name);
+      location.href = "home.html";
+    }
+  </script>
+
+</body>
+</html>

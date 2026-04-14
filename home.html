@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>الرئيسية</title>
+</head>
+<body style="text-align: center;">
+
+  <h1 id="welcome"></h1>
+
+  <h2>👋 أهلاً بك في مغامرات الكود</h2>
+
+  <p>
+    في هذه اللعبة ستتعلم البرمجة عن طريق ترتيب البلوكات 🧩
+    حاول تكوين الكود الصحيح للفوز 
+  </p>
+
+  <button onclick="location.href='language.html'">
+     ابدأ اللعب
+  </button>
+
+  <script>
+    let name = localStorage.getItem("playerName");
+    document.getElementById("welcome").innerText = "مرحباً " + name;
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>النتيجة</title>
+</head>
+<body style="text-align: center;">
+
+  <h1 id="message"></h1>
+
+  <button onclick="retry()">إعادة المحاولة</button>
+  <button onclick="goToLanguages()">اختيار لغة أخرى</button>
+
+  <script>
+    let result = localStorage.getItem("result");
+
+    if (result === "true") {
+      document.getElementById("message").innerText = "🎉 أحسنت! إجابة صحيحة";
+    } else {
+      document.getElementById("message").innerText = "😔 حاول مرة أخرى";
+    }
+
+    function retry() {
+      let page = localStorage.getItem("currentPage");
+      location.href = page;
+    }
+
+    function goToLanguages() {
+      location.href = "language.html";
+    }
+  </script>
+
+</body>
+</html>
