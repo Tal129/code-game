@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>اللعبة</title>
+</head>
+<body style="text-align: center;">
+
+  <!-- اسم اللاعب -->
+  <h3 id="playerName"></h3>
+
+  <!-- النقاط -->
+  <p>⭐ النقاط: <span id="score">0</span></p>
+
+   <p>⏱️ الوقت المتبقي: <span id="timer">30</span> ثانية</p>
+
+  <!-- السؤال -->
+  <h2 id="question">السؤال هنا</h2>
+
+  <!-- Hint -->
+  <p>💡 رتب البلوكات لتكوين الكود الصحيح</p>
+
+  <!-- البلوكات -->
+  <div id="blocks">
+    <span>Block 1</span>
+    <span>Block 2</span>
+    <span>Block 3</span>
+  </div>
+
+  <!-- منطقة السحب -->
+  <h3>اسحب البلوكات هنا:</h3>
+  <div id="drop-area"></div>
+
+  <br>
+
+  <!-- الأزرار -->
+  <button onclick="retry()">🔄 إعادة المحاولة</button>
+  <button onclick="finish()">✅ انتهيت</button>
+
+  <br><br>
+
+  <button onclick="location.href='language.html'">⬅ رجوع</button>
+
+  <!-- السكربت -->
+  <script>
+
+    // عرض اسم اللاعب
+    let name = localStorage.getItem("playerName");
+    document.getElementById("playerName").innerText = "👤 " + name;
+
+    // زر إعادة المحاولة
+    function retry() {
+      location.reload(); // يعيد نفس الصفحة
+    }
+
+    // زر انتهيت
+    function finish() {
+      // حالياً نعتبر الإجابة صحيحة (مؤقت)
+      // لاحقاً JS بتغيرها حسب الحل
+      localStorage.setItem("result", "true");
+
+      // نحفظ الصفحة الحالية (عشان يرجع لها)
+      localStorage.setItem("currentPage", window.location.pathname);
+
+      // نروح لصفحة النتيجة
+      location.href = "result.html";
+    }
+
+  </script>
+
+</body>
+</html>
