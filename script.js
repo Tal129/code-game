@@ -1,4 +1,3 @@
-
 const soundCorrect = new Audio('correct.mp3');
 const soundWrong = new Audio('wrong.mp3');
 const soundBackground = new Audio('bg.mp3'); 
@@ -6,8 +5,8 @@ soundBackground.loop = true;
 soundBackground.volume = 0.2; 
 
 
-
-const allQuestions = {'Java': [
+const allQuestions = {
+        'Java': [
         { q: "رتب الكود لتعريف متغير صحيح x قيمته 10", correct: "intx=10;", options: ["int", "x", "=", "10", ";", "String", "float", ":"] },
         { q: "رتب كود طباعة كلمة Hi", correct: "System.out.println(\"Hi\");", options: ["System.out.println", "(", "\"Hi\"", ")", ";", "print", "out", ":"] },
         { q: "رتب الكود لزيادة قيمة المتغير x بواحد", correct: "x=x+1;", options: ["x", "=", "x", "+", "1", ";", "y", "-"] },
