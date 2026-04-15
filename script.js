@@ -1,4 +1,4 @@
-alert("JS شغال");
+
 const soundCorrect = new Audio('sounds/correct.mp3');
 const soundWrong = new Audio('sounds/wrong.mp3');
 const soundBackground = new Audio('sounds/bg.mp3');
