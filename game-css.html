@@ -11,31 +11,25 @@
 
 <body style="text-align: center;">
 
-  <!-- اسم اللاعب -->
   <h3 id="playerName"></h3>
 
-  <!-- النقاط -->
- <p>⭐ النقاط: <span id="score">0</span></p>
+  <p>⭐ النقاط: <span id="score">0</span></p>
 
-  <!-- الوقت -->
   <p>⏱️ الوقت المتبقي: <span id="timer">30</span> ثانية</p>
 
-  <!-- السؤال -->
   <h2 id="question">السؤال هنا</h2>
 
-  <!-- Hint -->
   <p>💡 رتب البلوكات لتكوين الكود الصحيح</p>
 
-  <!-- البلوكات (فاضية، JS يعبيها) -->
+  <!-- البلوكات -->
   <div id="blocks"></div>
 
-  <!-- منطقة السحب -->
+  <!-- السحب -->
   <h3>اسحب البلوكات هنا:</h3>
   <div id="drop-area"></div>
 
   <br>
 
-  <!-- الأزرار -->
   <button onclick="retry()">🔄 إعادة المحاولة</button>
   <button onclick="finish()">✅ انتهيت</button>
 
@@ -43,11 +37,11 @@
 
   <button onclick="location.href='language.html'">⬅ رجوع</button>
 
-  <!-- مكتبة السحب (مهم جدًا) -->
+  <!-- مكتبة السحب -->
   <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
 
-  <!-- ملف الجافاسكربت -->
-  <script src="script.js"></script>
+  <!-- الجافاسكربت -->
+  <script src="./script.js"></script>
 
 </body>
 </html>
