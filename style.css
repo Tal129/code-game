@@ -5,34 +5,62 @@ body {
     font-family: 'Tajawal', sans-serif;
     text-align: center;
     padding: 20px;
+    color: #37474F;
 }
 
-button, .game-block {
+.game-block {
     display: inline-block;
-    border: 5px solid #37474F;
-    box-shadow: 6px 6px 0px rgba(0,0,0,0.2);
+    border: 3px solid #37474F;
+    box-shadow: 4px 4px 0px rgba(0,0,0,0.1);
     padding: 10px 20px;
-    margin: 10px;
+    margin: 5px;
+    cursor: grab;
+    background-color: #FFA726;
+    color: white;
+    border-radius: 8px;
+   font-size: 18px;
+}
+
+.game-block:active { cursor: grabbing; }
+
+#drop-area {
+    width: 90px;
+    max-width:600px;
+    min-height: 80px;
+    border: 4px dashed #9E9E9E;
+    margin: 20px auto;
+    background: white;
+    border-radius: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    direction: ltr;
+}
+#blocks {
+    min-height: 50px;
+    margin-bottom: 20px;
+}
+
+button {
+    border: none;
+    border-radius: 10px;
+    padding: 12px 25px;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 18px;
     cursor: pointer;
     background-color: #FFA726;
     color: white;
-    font-weight: bold;
-    transition: 0.1s;
+    box-shadow: 0 4px #FB8C00;
+    margin: 10px;
 }
 
 button:active {
-    transform: translate(3px, 3px);
-    box-shadow: 2px 2px 0px rgba(0,0,0,0.2);
+    box-shadow: 0 2px #FB8C00;
+    transform: translateY(2px);
 }
 
-.java-btn { background-color: #EF5350; }
-.html-btn { background-color: #42A5F5; }
-.css-btn { background-color: #66BB6A; }
-
-#drop-area {
-    width: 300px;
-    min-height: 100px;
-    border: 5px dashed #9E9E9E;
-    margin: 20px auto;
-    background: rgba(255,255,255,0.5);
-}
+.java-btn { background-color: #EF5350; box-shadow: 0 4px #D32F2F; }
+.html-btn { background-color: #42A5F5; box-shadow: 0 4px #1976D2; }
+.css-btn { background-color: #66BB6A; box-shadow: 0 4px #388E3C; }
