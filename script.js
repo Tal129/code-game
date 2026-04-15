@@ -1,7 +1,6 @@
-
-const soundCorrect = new Audio('sounds/correct.mp3');
-const soundWrong = new Audio('sounds/wrong.mp3');
-const soundBackground = new Audio('sounds/bg.mp3');
+const soundCorrect = new Audio('correct.mp3');
+const soundWrong = new Audio('wrong.mp3');
+const soundBackground = new Audio('bg.mp3');
 soundBackground.loop = true;
 soundBackground.volume = 0.2; 
 
