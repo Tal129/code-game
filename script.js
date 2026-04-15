@@ -1,6 +1,6 @@
-const soundCorrect = new Audio('correct.mp3');
-const soundWrong = new Audio('wrong.mp3');
-const soundBackground = new Audio('bg.mp3'); 
+const soundCorrect = new Audio('sounds/correct.mp3');
+const soundWrong = new Audio('sounds/wrong.mp3');
+const soundBackground = new Audio('sounds/bg.mp3');
 soundBackground.loop = true;
 soundBackground.volume = 0.2; 
 
@@ -116,7 +116,12 @@ function startTimer() {
  
 function finish() {
     const dropArea = document.getElementById("drop-area");
-    const userAnswer = dropArea.innerText.trim();
+   const userAnswer = Array.from(dropArea.children)
+  .map(el => el.innerText)
+  .join('')
+  .replace(/\s/g, '');
+
+const correctAnswer = questions[currentQuestionIndex].correct.replace(/\s/g, '');
     const correctAnswer = questions[currentQuestionIndex].correct;
 
     if (userAnswer === correctAnswer) {
