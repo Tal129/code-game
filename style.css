@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@700&display=swap' );
 
+/* الألوان الجديدة المتناسقة مع النيون */
 :root {
     --neon-purple: #bc13fe;
     --neon-blue: #00f3ff;
     --neon-yellow: #fff000;
-    --bg-overlay: rgba(20, 10, 45, 0.85);
+    --bg-dark: rgba(20, 10, 45, 0.85);
 }
 
 body {
@@ -13,16 +14,13 @@ body {
     font-family: 'Tajawal', sans-serif;
     text-align: center;
 
-    /* الخلفية - تأكد من صحة المسار في مشروعك */
+    /* الخلفية */
     background: url("images/gbg.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
 /* العناوين */
@@ -31,14 +29,14 @@ h1, h2, h3 {
     text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-purple);
 }
 
-/* صندوق اللعبة الشفاف */
+/* صندوق شفاف - تم تعديله ليكون داكناً ليتناسب مع النيون */
 .game-box {
-    background: var(--bg-overlay);
-    border-radius: 25px;
-    padding: 25px;
-    max-width: 450px;
+    background: var(--bg-dark);
+    border-radius: 20px;
+    padding: 20px;
+    max-width: 420px;
     margin: auto;
-    box-shadow: 0 0 20px rgba(188, 19, 254, 0.3);
+    box-shadow: 0 0 25px rgba(188, 19, 254, 0.4);
     border: 2px solid var(--neon-purple);
     color: white;
 }
@@ -46,98 +44,92 @@ h1, h2, h3 {
 /* اسم اللاعب */
 #playerName {
     font-size: 18px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     color: var(--neon-blue);
 }
 
-/* النقاط والوقت */
+/* النقاط */
 #score {
     color: var(--neon-yellow);
     font-weight: bold;
     text-shadow: 0 0 5px var(--neon-yellow);
 }
 
+/* الوقت */
 #timer {
     color: #ff4d4d;
     font-weight: bold;
     text-shadow: 0 0 5px #ff4d4d;
 }
 
-/* منطقة السؤال */
+/* السؤال */
 #question {
     background: rgba(255, 255, 255, 0.1);
-    padding: 20px;
+    padding: 15px;
     border-radius: 15px;
-    margin: 20px auto;
-    font-size: 1.1rem;
-    border-right: 5px solid var(--neon-yellow);
+    margin: 15px auto;
+    font-size: 18px;
     color: white;
+    border-right: 5px solid var(--neon-yellow);
 }
 
-/* البلوكات البرمجية */
+/* البلوكات */
 .game-block {
     display: inline-block;
     background: rgba(0, 243, 255, 0.1);
-    border: 2px solid var(--neon-blue);
-    border-radius: 12px;
-    padding: 12px 20px;
+    border: 3px solid var(--neon-blue);
+    border-radius: 10px;
+    padding: 10px 15px;
     margin: 8px;
     cursor: grab;
     font-weight: bold;
     color: var(--neon-blue);
-    box-shadow: 0 0 10px rgba(0, 243, 255, 0.2);
-    transition: 0.3s;
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.3);
+    transition: 0.2s;
 }
 
 .game-block:hover {
-    transform: scale(1.1) translateY(-3px);
+    transform: scale(1.1);
     background: var(--neon-blue);
     color: #000;
     box-shadow: 0 0 20px var(--neon-blue);
 }
 
-/* منطقة السحب والإفلات */
+/* منطقة السحب */
 #drop-area {
-    min-height: 110px;
-    border: 2px dashed var(--neon-purple);
-    border-radius: 20px;
-    margin: 25px auto;
-    padding: 15px;
+    min-height: 100px;
+    border: 3px dashed var(--neon-purple);
+    border-radius: 15px;
+    margin: 20px auto;
+    padding: 10px;
     background: rgba(188, 19, 254, 0.05);
-    display: flex;
-    align-items: center;
-    justify-content: center;
     color: rgba(255, 255, 255, 0.5);
 }
 
 /* الأزرار */
 button {
     border: none;
-    border-radius: 12px;
-    padding: 12px 25px;
-    margin: 10px 5px;
+    border-radius: 15px;
+    padding: 12px 18px;
+    margin: 10px;
     font-size: 16px;
     cursor: pointer;
     font-weight: bold;
     color: white;
-    transition: 0.3s;
+    transition: 0.2s;
 }
 
-/* زر التحقق */
+/* ألوان الأزرار المتناسقة مع النيون */
 button:nth-of-type(1) { 
     background: transparent; 
     border: 2px solid var(--neon-blue);
     color: var(--neon-blue);
 }
-
-/* زر التلميح */
 button:nth-of-type(2) { 
     background: transparent; 
     border: 2px solid var(--neon-yellow);
     color: var(--neon-yellow);
 }
-
-/* زر الخروج */
 button:nth-of-type(3) { 
     background: transparent; 
     border: 2px solid #999;
@@ -145,12 +137,17 @@ button:nth-of-type(3) {
 }
 
 button:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
     box-shadow: 0 0 15px currentColor;
 }
 
-/* تنسيق الجوال */
+/* للجوال */
 @media (max-width: 500px) {
-    .game-box { width: 95%; padding: 15px; }
-    button { width: 45%; margin: 5px; }
+    body {
+        padding: 10px;
+    }
+
+    button {
+        width: 90%;
+    }
 }
