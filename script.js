@@ -137,10 +137,12 @@ const correctAnswer = questions[currentQuestionIndex].correct.replace(/\s/g, '')
             loadQuestion();
             startTimer();
         }, 500);
-    } else {
+    } 
+    else {
         soundWrong.play();
-        alert("❌ الترتيب خاطئ، حاول مرة أخرى!");
-    }
+          setTimeout(() => {
+        alert("❌ الترتيب خاطئ!\nحاول مرة أخرى");
+    }, 100); 
 }
 
 function retry() {
