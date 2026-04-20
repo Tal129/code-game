@@ -155,3 +155,4 @@ function finishGame(isWin) {
     soundBackground.pause();
     location.href = "result.html";
 }
+}
