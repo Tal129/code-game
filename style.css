@@ -1,20 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@700&display=swap' );
 
-/* الألوان الجديدة المتناسقة مع النيون */
-:root {
-    --neon-purple: #bc13fe;
-    --neon-blue: #00f3ff;
-    --neon-yellow: #fff000;
-    --bg-dark: rgba(20, 10, 45, 0.85);
-}
-
 body {
     margin: 0;
     padding: 20px;
     font-family: 'Tajawal', sans-serif;
     text-align: center;
 
-    /* الخلفية */
+    /* إصلاح الخلفية لتظهر كاملة وثابتة */
     background: url("images/gbg.jpg");
     background-size: cover;
     background-position: center;
@@ -23,90 +15,83 @@ body {
     min-height: 100vh;
 }
 
-/* العناوين */
+/* العناوين - ألوان فاتحة ومضيئة */
 h1, h2, h3 {
-    color: var(--neon-blue);
-    text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-purple);
+    color: #fff;
+    text-shadow: 2px 2px 10px rgba(0, 243, 255, 0.8), 0 0 20px rgba(188, 19, 254, 0.5);
 }
 
-/* صندوق شفاف - تم تعديله ليكون داكناً ليتناسب مع النيون */
+/* صندوق شفاف جداً لعدم حجب الخلفية */
 .game-box {
-    background: var(--bg-dark);
+    background: rgba(255, 255, 255, 0.15); 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-radius: 20px;
     padding: 20px;
     max-width: 420px;
     margin: auto;
-    box-shadow: 0 0 25px rgba(188, 19, 254, 0.4);
-    border: 2px solid var(--neon-purple);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     color: white;
 }
 
-/* اسم اللاعب */
 #playerName {
     font-size: 18px;
     margin-bottom: 10px;
-    color: var(--neon-blue);
+    color: #fff;
 }
 
-/* النقاط */
 #score {
-    color: var(--neon-yellow);
+    color: #fff000;
     font-weight: bold;
-    text-shadow: 0 0 5px var(--neon-yellow);
+    text-shadow: 0 0 5px #fff000;
 }
 
-/* الوقت */
 #timer {
     color: #ff4d4d;
     font-weight: bold;
     text-shadow: 0 0 5px #ff4d4d;
 }
 
-/* السؤال */
 #question {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 243, 205, 0.2);
     padding: 15px;
     border-radius: 15px;
     margin: 15px auto;
     font-size: 18px;
     color: white;
-    border-right: 5px solid var(--neon-yellow);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* البلوكات */
 .game-block {
     display: inline-block;
-    background: rgba(0, 243, 255, 0.1);
-    border: 3px solid var(--neon-blue);
+    background: #ffb74d; 
+    border: 3px solid #fff;
     border-radius: 10px;
     padding: 10px 15px;
     margin: 8px;
     cursor: grab;
     font-weight: bold;
-    color: var(--neon-blue);
-    box-shadow: 0 0 10px rgba(0, 243, 255, 0.3);
+    color: #333;
+    box-shadow: 4px 4px 0px rgba(0,0,0,0.2);
     transition: 0.2s;
 }
 
 .game-block:hover {
     transform: scale(1.1);
-    background: var(--neon-blue);
-    color: #000;
-    box-shadow: 0 0 20px var(--neon-blue);
+    background: #ffd95b;
 }
 
-/* منطقة السحب */
 #drop-area {
     min-height: 100px;
-    border: 3px dashed var(--neon-purple);
+    border: 3px dashed rgba(255, 255, 255, 0.5);
     border-radius: 15px;
     margin: 20px auto;
     padding: 10px;
-    background: rgba(188, 19, 254, 0.05);
-    color: rgba(255, 255, 255, 0.5);
+    background: rgba(255,255,255,0.1);
+    color: white;
 }
 
-/* الأزرار */
 button {
     border: none;
     border-radius: 15px;
@@ -117,37 +102,20 @@ button {
     font-weight: bold;
     color: white;
     transition: 0.2s;
+    box-shadow: 0 4px 0 rgba(0,0,0,0.2);
 }
 
-/* ألوان الأزرار المتناسقة مع النيون */
-button:nth-of-type(1) { 
-    background: transparent; 
-    border: 2px solid var(--neon-blue);
-    color: var(--neon-blue);
-}
-button:nth-of-type(2) { 
-    background: transparent; 
-    border: 2px solid var(--neon-yellow);
-    color: var(--neon-yellow);
-}
-button:nth-of-type(3) { 
-    background: transparent; 
-    border: 2px solid #999;
-    color: #999;
-}
+button:nth-of-type(1) { background: #03a9f4; }
+button:nth-of-type(2) { background: #4caf50; }
+button:nth-of-type(3) { background: #ff5252; }
 
 button:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 15px currentColor;
+    filter: brightness(1.1);
 }
 
-/* للجوال */
 @media (max-width: 500px) {
-    body {
-        padding: 10px;
-    }
-
-    button {
-        width: 90%;
-    }
+    body { padding: 10px; }
+    button { width: 90%; }
 }
+
