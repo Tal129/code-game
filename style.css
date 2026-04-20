@@ -1,72 +1,156 @@
-/* 1. الخطوط والألوان الأساسية */
-@import url('https://fonts.googleapis.com/css2?family=Changa:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@700&display=swap' );
 
 :root {
-    --main-bg: #fdfdfd;
-    --game-blue: #4db8ff;  /* أزرق فاتح هادئ */
-    --game-green: #58d68d; /* أخضر مريح للعين */
-    --game-orange: #ffb347; /* برتقالي للفت الانتباه */
-    --text-color: #444;
+    --neon-purple: #bc13fe;
+    --neon-blue: #00f3ff;
+    --neon-yellow: #fff000;
+    --bg-overlay: rgba(20, 10, 45, 0.85);
 }
 
 body {
-    font-family: 'Changa', sans-serif; /* خط مناسب جداً للألعاب والأطفال */
-    background-color: var(--main-bg);
-    color: var(--text-color);
-    line-height: 1.6;
     margin: 0;
-    padding: 0;
-}
-
-/* 2. تنسيق الحاوية الرئيسية (الكارت) */
-.container {
-    max-width: 900px;
-    margin: 50px auto;
     padding: 20px;
-    background: white;
-    border-radius: 30px;
-    border: 3px solid #eee;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* ظل ناعم جداً */
-}
-
-/* 3. تنسيق الأيقونات (HTML, CSS, Java) */
-.tech-icon {
-    font-size: 3rem;
-    margin: 15px;
-    transition: transform 0.3s ease;
-    display: inline-block;
-}
-
-.tech-icon:hover {
-    transform: bounce 0.5s infinite; /* حركة قفز بسيطة */
-    transform: scale(1.2);
-}
-
-.html-color { color: #e44d26; }
-.css-color { color: #264de4; }
-.java-color { color: #007396; }
-
-/* 4. الأزرار (Buttons) بشكل تفاعلي */
-.btn-action {
-    background-color: var(--game-green);
-    color: white;
-    padding: 15px 40px;
-    border: none;
-    border-radius: 50px;
-    font-size: 1.3rem;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 6px 0 #45a049; /* تأثير العمق */
-    transition: all 0.1s;
-}
-
-.btn-action:active {
-    transform: translateY(4px);
-    box-shadow: 0 2px 0 #45a049;
-}
-
-/* 5. العناوين */
-h1, h2 {
-    color: var(--game-blue);
+    font-family: 'Tajawal', sans-serif;
     text-align: center;
+
+    /* الخلفية - تأكد من صحة المسار في مشروعك */
+    background: url("images/gbg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* العناوين */
+h1, h2, h3 {
+    color: var(--neon-blue);
+    text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-purple);
+}
+
+/* صندوق اللعبة الشفاف */
+.game-box {
+    background: var(--bg-overlay);
+    border-radius: 25px;
+    padding: 25px;
+    max-width: 450px;
+    margin: auto;
+    box-shadow: 0 0 20px rgba(188, 19, 254, 0.3);
+    border: 2px solid var(--neon-purple);
+    color: white;
+}
+
+/* اسم اللاعب */
+#playerName {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: var(--neon-blue);
+}
+
+/* النقاط والوقت */
+#score {
+    color: var(--neon-yellow);
+    font-weight: bold;
+    text-shadow: 0 0 5px var(--neon-yellow);
+}
+
+#timer {
+    color: #ff4d4d;
+    font-weight: bold;
+    text-shadow: 0 0 5px #ff4d4d;
+}
+
+/* منطقة السؤال */
+#question {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px auto;
+    font-size: 1.1rem;
+    border-right: 5px solid var(--neon-yellow);
+    color: white;
+}
+
+/* البلوكات البرمجية */
+.game-block {
+    display: inline-block;
+    background: rgba(0, 243, 255, 0.1);
+    border: 2px solid var(--neon-blue);
+    border-radius: 12px;
+    padding: 12px 20px;
+    margin: 8px;
+    cursor: grab;
+    font-weight: bold;
+    color: var(--neon-blue);
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.2);
+    transition: 0.3s;
+}
+
+.game-block:hover {
+    transform: scale(1.1) translateY(-3px);
+    background: var(--neon-blue);
+    color: #000;
+    box-shadow: 0 0 20px var(--neon-blue);
+}
+
+/* منطقة السحب والإفلات */
+#drop-area {
+    min-height: 110px;
+    border: 2px dashed var(--neon-purple);
+    border-radius: 20px;
+    margin: 25px auto;
+    padding: 15px;
+    background: rgba(188, 19, 254, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* الأزرار */
+button {
+    border: none;
+    border-radius: 12px;
+    padding: 12px 25px;
+    margin: 10px 5px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    transition: 0.3s;
+}
+
+/* زر التحقق */
+button:nth-of-type(1) { 
+    background: transparent; 
+    border: 2px solid var(--neon-blue);
+    color: var(--neon-blue);
+}
+
+/* زر التلميح */
+button:nth-of-type(2) { 
+    background: transparent; 
+    border: 2px solid var(--neon-yellow);
+    color: var(--neon-yellow);
+}
+
+/* زر الخروج */
+button:nth-of-type(3) { 
+    background: transparent; 
+    border: 2px solid #999;
+    color: #999;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px currentColor;
+}
+
+/* تنسيق الجوال */
+@media (max-width: 500px) {
+    .game-box { width: 95%; padding: 15px; }
+    button { width: 45%; margin: 5px; }
 }
